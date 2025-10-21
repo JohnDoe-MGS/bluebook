@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editor Inteligente de Documentos</title>
+  <!-- Estilos base -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Bibliotecas externas -->
+  <!-- Mammoth para converter DOCX em HTML -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.17/mammoth.browser.min.js"></script>
+  <!-- pdf.js para ler PDFs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js"></script>
+  <!-- html-docx-js para exportar DOCX -->
+  <script src="https://cdn.jsdelivr.net/npm/html-docx-js@0.3.1/dist/html-docx.min.js"></script>
+  <!-- FileSaver para salvar arquivos -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <!-- html2pdf para exportar PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Editor de Documentos Inteligente</h1>
+  </header>
+  <main>
+    <section class="controls">
+      <!-- Campo para upload de documentos -->
+      <label class="file-input-label">
+        Selecionar arquivo
+        <input type="file" id="fileInput" accept=".docx,.pdf" />
+      </label>
+      <!-- Botões de download -->
+      <button id="downloadPdf" disabled>Baixar PDF</button>
+      <button id="downloadDoc" disabled>Baixar WORD</button>
+    </section>
+    <section id="documentContainer" class="document-container" contenteditable="false">
+      <!-- O conteúdo do documento será injetado aqui -->
+    </section>
+  </main>
+  <!-- Script principal -->
+  <script src="script.js"></script>
+</body>
+</html>
